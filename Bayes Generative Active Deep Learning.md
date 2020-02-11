@@ -20,6 +20,22 @@ This scheme measures the acquistion function by the "mutual information" of the 
 Generating informative samples can significantly accelerate the training process in active learning. In Zhu & Bento's work, the GAN model has been pre-trained and the optimization during generation is solved efficiently. However, it means that the GAN model is not fine-tuned  in the training progresses, the generative and discriminative models do not __"co-evolve"__.
 In this paper, the generation processing is conditioned on slected samples and the learner and Xthe generator are jointly trained, i.e. "co-evolve" during training. They show the generated samples belong to the sufficiently small neighborhood of the target empirically and mathmatically.  
 
-
-## Information-Preserving data augmentation for active learning
 ![](archi.png)
+## Information-Preserving data augmentation for active learning
+In the above architecture, they combines BALD and Bayesian Data Augmentation (__BDA__):
+BALD selects data according the formula: x* = argmax a(x,M), where a(x,M) is the acquisition function related with Shannon entropy.
+BDA comprises a generator, a discriminator and a classifier. The input is a latent variable u (e.g., a multivariate Gaussian variable) and a class label y, the generator maps the tuple(u,y) to a data point x_a = g(u,y).
+In this paper, they modify BDA by fedding the sample X adn the correspoding label y istead of the latent variable u in the prototype.
+Specifically, the BDA is based on __ACGAN__ and __VAE-GAN__, where the VAE decoder is also the generator of GAN, the combinition is so called __VAE-ACGAN__.
+
+## Summary and criticism
+Instead of the traditional approach that is pool-based, this work combines query and synthesizing.
+This work is inspired by many other works, and the main parts in the framework are based on the variants or combinition of other works.
+The author mentioned that the computational cost is slightly higher than BDA.
+Note that the proposed approach is model-agnostic, thus can be integrated with other active learning methods.
+
+### Inspirition
+*BALD can serve as a selection policy by measure the model uncertainty
+*The generation parts can refrence many other current works
+*Model-agnostic approach can provide the generality to other methods
+
