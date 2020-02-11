@@ -22,3 +22,4 @@ In this paper, the generation processing is conditioned on slected samples and t
 
 
 ## Information-Preserving data augmentation for active learning
+![](archi.png)
