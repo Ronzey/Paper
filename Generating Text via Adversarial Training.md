@@ -32,4 +32,10 @@ Their results show two things:
 * The intermediate sentences does not make sense when they are generated via the linear transition between two random points in the latent space.
 
 ## Summary & Criticism
-This paper explores learning a continous hidden representations space to generate realistic text in a holistic manner. By reconstruct the objective function of GAN, they proposed the variant textGAN, but the results falls to inllustrate the meaning of the generated intermediate sentences and did not present the whether the generated text make sense from the semantic or syntactic perspective. Neither did it tell us the detail of the expectation calculation. It could be trival when the sentences are encoded by word embeddings even the synthetic and real sentences is similar from the view of expectation.
+This paper explores learning a continous hidden representations space to generate realistic text in a holistic manner. By reconstruct the objective function of GAN, they proposed the variant textGAN, but the results falls to inllustrate the meaning of the generated intermediate sentences and did not present the whether the generated text make sense from the semantic or syntactic perspective. Neither did it tell us the detail of the expectation calculation. It could be trival when the sentences are encoded by word embeddings even the synthetic and real sentences is similar from the view of expectation. Moreover, the authors mentioned that the discriminator can still sufficiently distinghuish the synthetic sentences (92%), which means the result is not as strong as the expectation plots.
+
+## Inspirition
+* The revised objective function of GAN avoid the discrete output which cannot be handle by the  gradient-based GAN. They adopted the feature-matching approach in the objective function.
+* The inspirition from the intermediate sentences produced from a linear transition between two andom points: 
+1. How about give a cluster of sentences within a sufficient small distance and annotate them with the label of the center sentence? Kind of sudo label or KNN?  
+2. How about an interpolation method? Find the intermediate latent representation and produce the tokens based on the fixed labels. It may help the efficiency of the model.
