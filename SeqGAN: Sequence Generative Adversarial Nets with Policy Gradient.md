@@ -20,5 +20,5 @@ After the generator was trained for many times, the discriminator got updated on
 They conduct four real-world experiments, including classical Chinese poem composition,  Barack Obama political speeches generation and music generation.
 
 ## Summary and Criticism
-This paper combines GAN and policy gradient, transfering the text generation as a RL problem. Though it still need more skill and insight to integrate GAN and RL, this paper has shown GAN's variant can be applied to sentence generation. However, we need to think it carefully how to implement such a SeqGAN under the limit of labeled data.
+This paper combines GAN and policy gradient, transfering the text generation as a RL problem. The use of Monte Carlo search is also inspiring for the entire sequence evaluation before the generation completed. Though it still need more skill and insight to integrate GAN and RL, this paper has shown GAN's variant can be applied to sentence generation. However, we need to think it carefully how to implement such a SeqGAN under the limit of labeled data.
 
