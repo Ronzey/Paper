@@ -9,4 +9,11 @@ Semi-supervised learning (SSL) seeks to largely alleviate the need for labeled f
 This paper proposed __MixMatch__, which introduces a single loss that gracefully unifies the above threee dominant approaches to semi-supervised learning. They utilize data augmentation to produce the label-fixed generated data and label guessing for the unlabeled example. In the final step of MixMatch, they apply MixUp to construct the training set.
 
 ## MixUp
+![](MixUp.png)
 
+## Loss function
+![](MixUpEquation.png)
+L - number of possible labels
+H(p,q) is the cross-entropy between distributions p and q
+T,K,alphd and lamda_u are hyperparameters.
+The squared L2 loss in eq.(4) corresponds to the multiclass __Brier score__ which is bounded and less sensitive to completely incorrect predictions. It has frequently been used as a loss for predictions on unlabeled data in SSL.
