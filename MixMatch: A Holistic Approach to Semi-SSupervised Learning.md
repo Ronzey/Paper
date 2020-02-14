@@ -8,8 +8,10 @@ Semi-supervised learning (SSL) seeks to largely alleviate the need for labeled f
 
 This paper proposed __MixMatch__, which introduces a single loss that gracefully unifies the above threee dominant approaches to semi-supervised learning. They utilize data augmentation to produce the label-fixed generated data and label guessing for the unlabeled example. In the final step of MixMatch, they apply MixUp to construct the training set.
 
+![](MixUpDiagram.png)
 ## MixUp
 ![](MixUp.png)
+
 
 ## Loss function
 ![](MixUpEquation.png)
