@@ -10,9 +10,8 @@ This paper proposed __MixMatch__, which introduces a single loss that gracefully
 
 ![](MixUpDiagram.png)
 ## MixUp
-![](MixUp.png)
+![](MixUpScript.png)
 
-s
 ## Loss function
 ![](MixUpEquation.png)
 L - number of possible labels
