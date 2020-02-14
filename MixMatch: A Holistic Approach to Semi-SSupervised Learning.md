@@ -18,3 +18,7 @@ L - number of possible labels
 H(p,q) is the cross-entropy between distributions p and q
 T,K,alphd and lamda_u are hyperparameters.
 The squared L2 loss in eq.(4) corresponds to the multiclass __Brier score__ which is bounded and less sensitive to completely incorrect predictions. It has frequently been used as a loss for predictions on unlabeled data in SSL.
+
+## Summary and Criticism
+There is nothing new for the augmentation part, the pipeline is original data (labeled + unlabled) -> augmentation (augment label-fixed examples based on the labeled data and produce examples based on the unlabeled data, then assign them with guessed label) -> MixUp -> Training.  
+For the language processing, we still need to consider how to apply the MixUp based on the language representation.
